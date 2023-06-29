@@ -3,5 +3,5 @@ The basketball app for Android using Basketball Api (https://allsportsapi.com/ba
 ## Sreenshots
 Splash Fragment|Home Fragment|Details Fragment|Favourite Fragment
 ----|----|----|----
- ![](screenshots/screenshot_splash.jpg)  | ![](screenshots/screenshot_home.jpg) | ![](Screenshots/screenshot_details.jpg)  | ![](screenshots/screenshot_favourite.jpg)
+ ![](screenshots/screenshots_splash.jpg)  | ![](screenshots/screenshots_home.jpg) | ![](Screenshots/screenshots_details.jpg)  | ![](screenshots/screenshots_favourite.jpg)
 
