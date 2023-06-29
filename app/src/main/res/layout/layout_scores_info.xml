@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="scores"
+            type="com.goldina.basketballapp.models.response.Scores"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_1st_quarter"
+            android:gravity="start"
+            android:layout_marginBottom="5dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tvScoreFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:score ="@{scores.firstQuarter[0]}"
+            android:textColor="@color/dark"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <ProgressBar
+                android:id="@+id/pbHomeFirst"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progress="@{scores.firstQuarter[0].score_home}"
+                app:scale="@{scores.firstQuarter[0]}"
+                android:progressTint="?attr/colorPrimary"
+                android:scaleX="-1" />
+
+            <ProgressBar
+                android:id="@+id/pbAwayFirst"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progress="@{scores.firstQuarter[0].score_away}"
+                app:scale="@{scores.firstQuarter[0]}"
+                android:progressTint="?attr/colorAccent" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_2nd_quarter"
+            android:gravity="start"
+            android:layout_marginBottom="5dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvScoreSecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:score ="@{scores.secondQuarter[0]}"
+            android:textColor="@color/dark"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <ProgressBar
+                android:id="@+id/pbHomeSecond"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:scale="@{scores.secondQuarter[0]}"
+                android:progress="@{scores.secondQuarter[0].score_home}"
+                android:progressTint="?attr/colorPrimary"
+                android:scaleX="-1" />
+
+            <ProgressBar
+                android:id="@+id/pbAwaySecond"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:scale="@{scores.secondQuarter[0]}"
+                android:progress="@{scores.secondQuarter[0].score_away}"
+                android:layout_weight="1"
+                android:progressTint="?attr/colorAccent" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_3rd_quarter"
+            android:gravity="start"
+            android:layout_marginBottom="5dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvScoreThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:score ="@{scores.thirdQuarter[0]}"
+            android:textColor="@color/dark"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <ProgressBar
+                android:id="@+id/pbHomeThird"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:scale="@{scores.thirdQuarter[0]}"
+                android:progress="@{scores.thirdQuarter[0].score_home}"
+                android:progressTint="?attr/colorPrimary"
+                android:scaleX="-1" />
+
+            <ProgressBar
+                android:id="@+id/pbAwayThird"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:scale="@{scores.thirdQuarter[0]}"
+                android:progress="@{scores.thirdQuarter[0].score_away}"
+                android:progressTint="?attr/colorAccent" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_4st_quarter"
+            android:gravity="start"
+            android:layout_marginBottom="5dp"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tvScoreForth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:score ="@{scores.fourthQuarter[0]}"
+            android:textColor="?attr/colorPrimaryVariant"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <ProgressBar
+                android:id="@+id/pbHomeForth"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progress="@{scores.fourthQuarter[0].score_home}"
+                app:scale="@{scores.fourthQuarter[0]}"
+                android:progressTint="@color/grey_blue"
+                android:scaleX="-1" />
+
+            <ProgressBar
+                android:id="@+id/pbAwayForth"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progress="@{scores.fourthQuarter[0].score_away}"
+                app:scale="@{scores.fourthQuarter[0]}"
+                android:progressTint="?attr/colorAccent" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

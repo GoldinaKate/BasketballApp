@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">BasketballApp</string>
+    <!-- Label Quarter -->
+    <string name="_4st_quarter">4st Quarter</string>
+    <string name="_3rd_quarter">3rd Quarter</string>
+    <string name="_2nd_quarter">2nd Quarter</string>
+    <string name="_1st_quarter">1st Quarter</string>
+
+    <!-- Content Description Test-->
+    <string name="logo_team">logo team</string>
+
+    <string name="test_score">10</string>
+    <string name="logo_app">logo app</string>
+
+    <!-- Menu Label -->
+    <string name="fixture">All</string>
+    <string name="favourite">Favourite</string>
+
+    <string name="issues_message">\"Unable to process request, please try again later\"</string>
+
+    <string name="btn_league">League</string>
+    <string name="delimiter">-</string>
+</resources>
