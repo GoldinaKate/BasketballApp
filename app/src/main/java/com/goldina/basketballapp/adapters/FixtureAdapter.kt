@@ -1,15 +1,19 @@
 package com.goldina.basketballapp.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.goldina.basketballapp.R
 import com.goldina.basketballapp.databinding.ItemFixtureBinding
 import com.goldina.basketballapp.models.response.Match
 
 class FixtureAdapter(
+    private val context:Context,
     private val listenerItem: OnItemClickListener? = null,
     private val listenerIcon: OnIconFavClickListener? = null,
 ) : RecyclerView.Adapter<FixtureAdapter.RecipeViewHolder>() {
@@ -55,7 +59,24 @@ class FixtureAdapter(
         val currentMatch = matches[position]
 
         holder.binding.layoutBasicInfo.apply {
-            match = currentMatch
+            tvFixtureCountryName.text=currentMatch.country_name
+            tvFixtureLeague.text=currentMatch.league_name
+            tvFixtureStatus.text = currentMatch.event_status
+            imgFixtureHomeTeam.load(currentMatch.event_home_team_logo) {
+                crossfade(true)
+                crossfade(1000)
+                error(R.drawable.no_photo)
+            }
+            imgFixtureAwayTeam.load(currentMatch.event_away_team_logo) {
+                crossfade(true)
+                crossfade(1000)
+                error(R.drawable.no_photo)
+            }
+            tvFixtureDate.text= context
+                .getString(R.string.date_match,
+                    currentMatch.event_date, currentMatch.event_time)
+            tvFixtureHomeTeamName.text = currentMatch.event_home_team
+            tvFixtureAwayTeamName.text = currentMatch.event_away_team
             val score = currentMatch.event_final_result.split(" - ")
             tvFixtureHomeScore.text=score[0]
             tvFixtureAwayScore.text=score[1]

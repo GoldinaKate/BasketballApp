@@ -28,8 +28,4 @@ constructor(private val repository: FixtureRepository) : ViewModel() {
                 _response.value = response
         }.launchIn(viewModelScope)
     }
-
-
-
-
 }

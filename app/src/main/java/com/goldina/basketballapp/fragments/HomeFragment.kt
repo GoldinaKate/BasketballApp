@@ -54,7 +54,7 @@ class HomeFragment : Fragment(),FixtureAdapter.OnItemClickListener {
 
     @SuppressLint("SimpleDateFormat")
     private fun loadData() {
-        fixtureAdapter = FixtureAdapter(this)
+        fixtureAdapter = FixtureAdapter(requireContext(), listenerItem = this)
         binding.rvFixture.apply {
             layoutManager=LinearLayoutManager(requireContext())
             setHasFixedSize(true)

@@ -11,16 +11,14 @@ import com.goldina.basketballapp.R
 import com.goldina.basketballapp.databinding.FragmentSplashBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlin.coroutines.CoroutineContext
 
-class SplashFragment : Fragment(), CoroutineScope {
+class SplashFragment : Fragment() {
     private lateinit var binding: FragmentSplashBinding
-    override val coroutineContext: CoroutineContext
-    get() = Dispatchers.Main + Job()
+
+    private val fragmentScope = CoroutineScope(Dispatchers.Main)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSplashBinding.inflate(layoutInflater)
         val animTop = AnimationUtils.loadAnimation(context,R.anim.from_top)
@@ -31,12 +29,13 @@ class SplashFragment : Fragment(), CoroutineScope {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        launch {
+        fragmentScope.launch {
             delay(3000L)
-            withContext(Dispatchers.Main){
-
-                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
-            }
+            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
         }
+    }
+    override fun onPause() {
+        fragmentScope.cancel()
+        super.onPause()
     }
 }

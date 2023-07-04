@@ -38,7 +38,7 @@ class FavouriteFragment : Fragment(), FixtureAdapter.OnIconFavClickListener {
     }
 
     private fun setupRV(matches: List<Match>) {
-        fixtureAdapter = FixtureAdapter(null,this)
+        fixtureAdapter = FixtureAdapter(requireContext(), listenerIcon = this)
         binding.rvFixture.apply {
             layoutManager= LinearLayoutManager(requireContext())
             setHasFixedSize(true)
